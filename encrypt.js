@@ -12,34 +12,47 @@ var isAlpha = function(ch){
 }
 
 function encryption(){
-	var str=document.getElementById('text');
-	
+	var input=document.getElementById('text');
+	var str=input.split("");
+	var answer=[];
+	var cas;
+	console.log(str);
 	for (var b in str){
 		
 		if (isAlpha(b)==0 && Number.isInteger(b)==0){
-			document.getElementById('output').innerHTML=b;
+			answer.push(b);
+			console.log(b);
 		}
 		else if (isdigit(b)==1) {
 			let dig;
-			dig=b-k/2;
-			document.getElementById('output').innerHTML=dig;
+			dig=b-2;
+			console.log(dig);
+			answer.push(dig);
 		} 
 		else {
 			let c=str.charCodeAt(b);
-			let en=c+k+1;
+			let en=c+2;
 			if (isupper(b) && en>90){
 				en=en-28;
-				document.getElementById('output').innerHTML=String.fromCharCode(en);
+				cas=String.fromCharCode(en);
+				console.log(en, cas);
+				answer.push(cas);
 			}
 			else if(islower(b) && en>122){
 				en=en-29;
-				document.getElementById('output').innerHTML=String.fromCharCode(en);
+				cas=String.fromCharCode(en);
+				console.log(en, cas);
+				answer.push(cas);
 			}
 			else{
-				document.getElementById('output').innerHTML=String.fromCharCode(en);
+				cas=String.fromCharCode(en);
+				console.log(cas);
+				answer.push(cas);
 			}
 		}
 	}
+	console.log(answer);
+	document.getElementById("output").innerHTML=answer.toString();
 }
 
 function decryption(){
