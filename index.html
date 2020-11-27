@@ -19,7 +19,7 @@
 		Cipher Text
 	</title>
 </head>
-<body>
+<body style="background-color: #FFC324" class="example">
   <script>
       var password;
       var pass1="6g4T2";
@@ -32,29 +32,40 @@
         window.location="file:///F:/Group%20Project/Groupproject.ds/index.html";
       }
   </script>
-	<div class="jumbotron">
-  		<h1 class="display-4" style="text-align: center;">Cipher Text Encoder</h1>
+	<div class="jumbotron text-center text-light" id="head" style="background-color: #D38209; font-family: 'Perpetua', sans-serif; font-size: xx-large;">
+  		<h1 class="display-4" style="text-align: center">Cipher Text Encoder</h1>
   		<p class="lead" style="text-align: center;">Just unlock your text</p>
 	</div>
 
-	<div class="container">
-		<div class="custom-control custom-radio custom-control-inline">
+	<div class="container " style="background-color: #C37209; font-family: 'Optima', sans-serif;">
+		<div class="custom-control custom-radio custom-control-inline text-light">
   			<input type="radio" id="encrypt" name="customRadioInline1" class="custom-control-input">
   			<label class="custom-control-label" for="encrypt">Encryption</label>
 		</div>
-		<div class="custom-control custom-radio custom-control-inline">
+		<div class="custom-control custom-radio custom-control-inline text-light">
   			<input type="radio" id="decrypt" name="customRadioInline1" class="custom-control-input">
   			<label class="custom-control-label" for="decrypt">Decryption</label>
 		</div>
 
-		<div class="input-group">
-  			<div class="input-group-prepend">
-    			<span class="input-group-text">Your Textarea</span>
+		<div class="input-group text-light" >
+      <div style="width: 20%;">
+        <div class="input-group-prepend">
+          <span class="input-group-text" style="background-color: #E1C294">Cipher Key</span>
+        </div>
+        <textarea class="form-control" aria-label="Your textarea" id="key">Key</textarea>
+      </div>
+    
+  		<div style="width: 70%;margin-top: -0.7%;">
+      	<div class="input-group-prepend">
+    			<span class="input-group-text" style="margin-bottom: -1%;background-color: #E1C294">Your Textarea</span>
   			</div>
-  			<textarea class="form-control" aria-label="Your textarea" id="text"></textarea>
+  			<textarea class="form-control" aria-label="Your textarea" id="text">Message</textarea>
+      </div>
 		</div>
 
-		<button type="button" class="btn btn-primary" onclick="display()" data-toggle="modal" data-target="#exampleModal" style="align-content: center;">Submit</button>
+		<div class="text-center text-light">
+      <button type="button" class="btn btn-primary " onclick="display()" data-toggle="modal" data-target="#exampleModal" style="align-content: center;">Submit</button>
+    </div>
 
 		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   			<div class="modal-dialog" role="document">

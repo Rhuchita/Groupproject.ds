@@ -1,4 +1,6 @@
 *{
 	margin:2%; 
 }
-
+.container{
+	min-height: 375px;
+}

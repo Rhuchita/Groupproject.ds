@@ -12,6 +12,7 @@ var isAlpha = function(ch){
 }
 
 function encryption(){
+	var k=document.getElementById("key").value;
 	var insert=document.getElementById("text").value;
 	var str=insert.split("");
 	var answer=[];
@@ -25,13 +26,13 @@ function encryption(){
 		}
 		else if (Number.isInteger(b)==1) {
 			var dig;
-			dig=b-2;
+			dig=b-k%2;
 			answer.push(dig);
 		} 
 		else {
 			var temp=b.toString();
 			var c=temp.charCodeAt(b);
-			var en=c+2;
+			var en=c+k*2;
 			if (c>64 && c<91 && en>90){
 				en=en-28;
 				cas=String.fromCharCode(en);
@@ -53,6 +54,7 @@ function encryption(){
 }
 
 function decryption(){
+	var k=document.getElementById("key").value;
 	var insert=document.getElementById("text").value;
 	var str=insert.split("");
 	var answer=[];
@@ -66,13 +68,13 @@ function decryption(){
 		}
 		else if (Number.isInteger(b)==1) {
 			var dig;
-			dig=b+2;
+			dig=b+k%2;
 			answer.push(dig);
 		} 
 		else {
 			var temp=b.toString();
 			var c=temp.charCodeAt(b);
-			var en=c-2;
+			var en=c-k*2;
 			if (c>64 && c<91 && en>90){
 				en=en+28;
 				cas=String.fromCharCode(en);
