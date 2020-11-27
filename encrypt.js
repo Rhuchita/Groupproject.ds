@@ -12,76 +12,83 @@ var isAlpha = function(ch){
 }
 
 function encryption(){
-	var input=document.getElementById('text');
-	var str=input.split("");
+	var insert=document.getElementById("text").value;
+	var str=insert.split("");
 	var answer=[];
+	var b="";
 	var cas;
-	console.log(str);
-	for (var b in str){
-		
+	var i;
+	for (i=0; i<str.length; i++){
+		b=str[i];
 		if (isAlpha(b)==0 && Number.isInteger(b)==0){
 			answer.push(b);
-			console.log(b);
 		}
-		else if (isdigit(b)==1) {
-			let dig;
+		else if (Number.isInteger(b)==1) {
+			var dig;
 			dig=b-2;
-			console.log(dig);
 			answer.push(dig);
 		} 
 		else {
-			let c=str.charCodeAt(b);
-			let en=c+2;
-			if (isupper(b) && en>90){
+			var temp=b.toString();
+			var c=temp.charCodeAt(b);
+			var en=c+2;
+			if (c>64 && c<91 && en>90){
 				en=en-28;
 				cas=String.fromCharCode(en);
-				console.log(en, cas);
 				answer.push(cas);
 			}
-			else if(islower(b) && en>122){
-				en=en-29;
+			else if(c>96 && c<123 && en>122){
+				en=en-20;
 				cas=String.fromCharCode(en);
-				console.log(en, cas);
 				answer.push(cas);
 			}
 			else{
 				cas=String.fromCharCode(en);
-				console.log(cas);
 				answer.push(cas);
 			}
 		}
 	}
 	console.log(answer);
-	document.getElementById("output").innerHTML=answer.toString();
+	document.getElementById("output").innerHTML=answer.join("");
 }
 
 function decryption(){
-	var str=document.getElementById('text');
-	
-	for (var b in str){
-		
+	var insert=document.getElementById("text").value;
+	var str=insert.split("");
+	var answer=[];
+	var b="";
+	var cas;
+	var i;
+	for (i=0; i<str.length; i++){
+		b=str[i];
 		if (isAlpha(b)==0 && Number.isInteger(b)==0){
-			document.getElementById('output').innerHTML=b;
+			answer.push(b);
 		}
-		else if (isdigit(b)==1) {
-			let dig;
-			dig=b-k/2;
-			document.getElementById('output').innerHTML=dig;
+		else if (Number.isInteger(b)==1) {
+			var dig;
+			dig=b+2;
+			answer.push(dig);
 		} 
 		else {
-			let c=str.charCodeAt(b);
-			let en=c+k+1;
-			if (isupper(b) && en>90){
-				en=en-28;
-				document.getElementById('output').innerHTML=String.fromCharCode(en);
+			var temp=b.toString();
+			var c=temp.charCodeAt(b);
+			var en=c-2;
+			if (c>64 && c<91 && en>90){
+				en=en+28;
+				cas=String.fromCharCode(en);
+				answer.push(cas);
 			}
-			else if(islower(b) && en>122){
-				en=en-29;
-				document.getElementById('output').innerHTML=String.fromCharCode(en);
+			else if(c>96 && c<123 && en>122){
+				en=en+20;
+				cas=String.fromCharCode(en);
+				answer.push(cas);
 			}
 			else{
-				document.getElementById('output').innerHTML=String.fromCharCode(en);
+				cas=String.fromCharCode(en);
+				answer.push(cas);
 			}
 		}
 	}
+	console.log(answer);
+	document.getElementById("output").innerHTML=answer.join("");
 }
