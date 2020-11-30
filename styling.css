@@ -4,3 +4,9 @@
 .container{
 	min-height: 375px;
 }
+ img{
+ 	position: relative;
+ 	float: right;
+  	width: 150px;
+  	height: 150px;
+ }

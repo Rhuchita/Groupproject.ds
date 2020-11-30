@@ -34,12 +34,12 @@ function encryption(){
 			var c=temp.charCodeAt(b);
 			var en=c+k*2;
 			if (c>64 && c<91 && en>90){
-				en=en-28;
+				en=en-26;
 				cas=String.fromCharCode(en);
 				answer.push(cas);
 			}
 			else if(c>96 && c<123 && en>122){
-				en=en-20;
+				en=en-26;
 				cas=String.fromCharCode(en);
 				answer.push(cas);
 			}
@@ -76,12 +76,12 @@ function decryption(){
 			var c=temp.charCodeAt(b);
 			var en=c-k*2;
 			if (c>64 && c<91 && en>90){
-				en=en+28;
+				en=en+26;
 				cas=String.fromCharCode(en);
 				answer.push(cas);
 			}
 			else if(c>96 && c<123 && en>122){
-				en=en+20;
+				en=en+26;
 				cas=String.fromCharCode(en);
 				answer.push(cas);
 			}

@@ -13,13 +13,14 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styling.css" >
+    <link rel="stylesheet" href="./styling.css" > 
     <script src="./encrypt.js"></script>
     <title>
 		Cipher Text
 	</title>
 </head>
 <body style="background-color: #FFC324" class="example">
+
   <script>
       var password;
       var pass1="6g4T2";
@@ -29,10 +30,11 @@
         alert('Password Correct! Click OK to enter!');
       }
       else{
-        window.location="file:///F:/Group%20Project/Groupproject.ds/index.html";
+        window.location="https://rhuchita.github.io/Groupproject.ds/";
       }
   </script>
 	<div class="jumbotron text-center text-light" id="head" style="background-color: #D38209; font-family: 'Perpetua', sans-serif; font-size: xx-large;">
+    <img src="./PICT-Logo_edited.png">
   		<h1 class="display-4" style="text-align: center">Cipher Text Encoder</h1>
   		<p class="lead" style="text-align: center;">Just unlock your text</p>
 	</div>
@@ -47,19 +49,19 @@
   			<label class="custom-control-label" for="decrypt">Decryption</label>
 		</div>
 
-		<div class="input-group text-light" >
-      <div style="width: 20%;">
+		<div class="input-group text-light row" >
+      <div class="col-sm" >
         <div class="input-group-prepend">
           <span class="input-group-text" style="background-color: #E1C294">Cipher Key</span>
         </div>
-        <textarea class="form-control" aria-label="Your textarea" id="key">Key</textarea>
+        <textarea class="form-control" aria-label="Your textarea" id="key"></textarea>
       </div>
     
-  		<div style="width: 70%;margin-top: -0.7%;">
+  		<div class="col-sm" >
       	<div class="input-group-prepend">
     			<span class="input-group-text" style="margin-bottom: -1%;background-color: #E1C294">Your Textarea</span>
   			</div>
-  			<textarea class="form-control" aria-label="Your textarea" id="text">Message</textarea>
+  			<textarea class="form-control" aria-label="Your textarea" id="text"></textarea>
       </div>
 		</div>
 
