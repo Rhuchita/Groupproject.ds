@@ -75,13 +75,14 @@ function decryption(){
 			var temp=b.toString();
 			var c=temp.charCodeAt(b);
 			var en=c-k*2;
-			if (c>64 && c<91 && en>90){
+			if (c>=65 && c<=90 && en<65){
 				en=en+26;
 				cas=String.fromCharCode(en);
 				answer.push(cas);
 			}
-			else if(c>96 && c<123 && en>122){
-				en=en+26;
+
+			else if(c>96 && c<123 && en<97){
+				en=en+25;
 				cas=String.fromCharCode(en);
 				answer.push(cas);
 			}
