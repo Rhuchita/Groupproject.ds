@@ -82,7 +82,7 @@ function decryption(){
 			}
 
 			else if(c>96 && c<123 && en<97){
-				en=en+25;
+				en=en+26;
 				cas=String.fromCharCode(en);
 				answer.push(cas);
 			}
